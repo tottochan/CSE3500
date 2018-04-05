@@ -12,7 +12,11 @@ def min_coin(D, n):
             
             if i >= D[j] and C[i - D[j]] >= 0:
 
-                if C[i] == -1 or C[i] > C[i - D[j]] + 1:
+                if C[i] == -1:
+                    
+                    C[i] = C[i - D[j]] + 1
+                    
+                elif C[i] >=0 and C[i] > C[i - D[j]] + 1:
                     
                     C[i] = C[i - D[j]] + 1
                     
